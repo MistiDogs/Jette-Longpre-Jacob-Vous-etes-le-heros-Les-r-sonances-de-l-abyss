@@ -2,7 +2,7 @@ let chapters =  {
     arrive : {
         titre: "Emménagement en ville",
         description: "Vous êtes un détective qui a entendu des rumeurs d'une ville fantôme où surviennent des événements étranges, vous êtes venu enquêter. Il y a deux endroits qui vous tapent à l'oeil.",
-        image: "",
+        image: "./assets/images/arrive",
         option:[
             {titre: 'Poste de police | goToChapter("police")', 'destination': 'police'},
             {titre: 'Rue principale | goToChapter("principale")', 'destination': 'principale'}
@@ -12,7 +12,7 @@ let chapters =  {
     principale : {
         titre: "Sueurs froides",
         description: "Pendant votre promenade, vous êtes enveloppé dans une atmosphère intrigante où des murmures lointains et des ombres furtives éveillent votre curiosité. Vous envisagez de vous précipiter vers votre véhicule ou de poursuivre l'enquête.",
-        image: "",
+        image: "./assets/images/principale",
         option:[
             {titre: 'Continuer | goToChapter("bizarre")', 'destination': 'bizarre'},
             {titre: 'Se Replier | goToChapter("vide")', 'destination': 'vide'}
@@ -22,7 +22,7 @@ let chapters =  {
     police : {
         titre: "Centre de police",
         description: "Dans le centre de police, vous trouvez un pistolet sur un bureau, accompagné d'affiches de disparitions incomplètes.",
-        image: "",
+        image: "./assets/images/police",
         option:[ 
             {titre: 'Presévérer | goToChapter("trouve")', 'destination': 'trouve'},
             {titre: 'Délaisser | goToChapter("principale")', 'destination': 'principale'}
@@ -32,21 +32,21 @@ let chapters =  {
     trouve : {
         titre: "Le Piège de l'Ombre Mortelle",
         description: "Vous abaissez vos gardes, relâchant votre vigilance un instant fatal, persuadé d'avoir trouvé refuge, et c'est alors qu'une créature surgit de l'ombre pour vous terrasser.",
-        image: "",
+        image: "./assets/images/trouve",
         option:[{titre: 'Recommencer | goToChapter("arrive")', 'destination': 'arrive'}]
     },
 
     vide : {
         titre: "T'es pas toi même quand t'as faim",
         description: "Lors de votre fuite, vous perdez votre chemin dû au brouillard et vous finissez par mourir de faim.",
-        image: "",
+        image: "./assets/images/vide",
         option:[{titre: 'Recommencer | goToChapter("arrive")', 'destination': 'arrive'}]
     },  
 
     bizarre : {
         titre: "Entre chaos et l'imprévu",
         description: "Vous puisez votre courage et avancez d'un pas déterminé. Quelques instants plus tard, une créature énigmatique se révèle, figée dans une posture intrigante.",
-        image: "",
+        image: "./assets/images/bizarre",
         option:[
             {titre: 'Attendre | goToChapter("attendre")', 'destination': 'attendre'},
             {titre: 'Tirer | goToChapter("pow")', 'destination': 'pow'},
@@ -57,21 +57,21 @@ let chapters =  {
     attendre : {
         titre: "Surpise !",
         description: "La créature bondit avec une férocité déconcertante, vous laissant suffisamment de temps pour rejoindre votre voiture et la démarrer, mais elle vous poursuit toujours de près...",
-        image: "",
+        image: "./assets/images/attendreEtLancer.mp4",
         option:[{titre: 'Recommencer | goToChapter("arrive")', 'destination': 'arrive'}]
     },
 
     pow : {
         titre: "Explosion Sonore",
         description: "La créature s'effondre, cela déclenche l'arrivée d'une meute d'ombre volante qui vous submerge.",
-        image: "",
+        image: "./assets/images/pow.mp4",
         option:[{titre: 'Recommencer | goToChapter("arrive")', 'destination': 'arrive'}]
     },
 
     lancer : {
         titre: "Escapade",
         description: "La créature se précipite à la poursuite du pistolet, vous offrant une opportunité de fuir la ville. ",
-        image: "",
+        image: "./assets/images/pasencoretrouvé",
         option:[{titre: 'Recommencer | goToChapter("arrive")', 'destination': 'arrive'}]
     },
 };
