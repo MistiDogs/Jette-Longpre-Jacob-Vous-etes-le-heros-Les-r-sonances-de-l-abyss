@@ -84,10 +84,12 @@ let descriptionChapitre = document.querySelector('.description');
 let imageChapitre = document.querySelector('.img');
 let videoChapitre = document.querySelector('video');
 
+//Variable pour la twist
+let iHaveGun = false;
+
 //Lancement du premier chapitre lorsque la pager ouvre
-window.onload = function() {
+
     goToChapter('arrive');
-};
 
 //Code JS pour que le jeu fonctionne
 function goToChapter(chapitreKey) {
@@ -133,6 +135,7 @@ if (chapters[chapterKey]) {
 
 Notes... skip !
 
-if else image sinon video, changer toute la ligne 
 
+
+if ''bizarre && gun true... 
 */

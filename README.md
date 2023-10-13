@@ -10,5 +10,5 @@ Développement web - [ Projet vous êtes le héros ] -  https://smnarnold.com/pr
 
 ## Diagramme
 
-![Text alternatif](./assets/schema.png)
+![Text alternatif](./assets/drawio/schema.png)
 
