@@ -44,7 +44,7 @@ p {
   margin-bottom: 30px;
 }
 
-img {
+img, video {
   display: flex;
   width: 50%;
   max-width: 100%;
