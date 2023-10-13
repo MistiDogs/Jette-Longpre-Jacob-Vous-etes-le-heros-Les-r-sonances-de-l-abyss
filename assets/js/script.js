@@ -84,30 +84,33 @@ let chapters =  {
 };
 
 
-goToChapter('bizarre');
 function goToChapter(chapterKey) {
-    
-    titre.innerHTML = chapters[chapterKey].titre;
-    description.innerHTML = chapters[chapterKey].description;
-    image.src = chapters[chapterKey].image;
+  
+    const chapter = chapters[chapterKey];
 
-    if (chapters[chapterKey]) {
-        const chapter = chapters[chapterKey];
-        console.log(chapter.titre);
-        console.log(chapter.description);
-        console.log("Options:");
-        for (const option of chapter.option) {
-            console.log(option.titre);
-        }
-    } else {
-        console.log("Chapitre non trouvé : " + chapterKey);
-    }
+    titre.innerHTML = chapter.titre;
+    description.innerHTML = chapter.description;
+    image.src = chapter.image;
+
+
+    
+
 }
 
 
-
-
-
-
+//Jeu dans la console
+goToChapter('bizarre');
+if (chapters[chapterKey]) {
+    const chapter = chapters[chapterKey];
+    console.log(chapter.titre);
+    console.log(chapter.description);
+    console.log("Options:");
+    for (const option of chapter.option) {
+        console.log(option.titre);
+    }
+} else {
+    console.log("Chapitre non trouvé : " + chapterKey);
+}
+//fin de jeu 
 
 
