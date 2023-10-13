@@ -89,7 +89,7 @@ let iHaveGun = false;
 
 //Lancement du premier chapitre lorsque la pager ouvre
 
-    goToChapter('arrive');
+    goToChapter('pow');
 
 //Code JS pour que le jeu fonctionne
 function goToChapter(chapitreKey) {
@@ -107,6 +107,7 @@ function goToChapter(chapitreKey) {
             videoChapitre.style.display = 'block';
             imageChapitre.style.display = 'none';
             videoChapitre.autoplay = true;
+            videoChapitre.controls = true;
         }
     }
 }
