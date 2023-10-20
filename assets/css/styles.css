@@ -19,6 +19,7 @@ body {
 
 #jeu {
   display: flex;
+  z-index: 4;
   background-color: var(--background_contenu);
   width: 600px;
   text-align: center;
@@ -67,4 +68,31 @@ button {
 
 button:hover {
   background-color: var(--bouton_hover);
+}
+
+.anim-body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: url(/assets/images/) center center;
+  background-size: cover;
+}
+
+.fog-anim {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url(/assets/images/fog.png) repeat-x;
+  background-size: 200% auto;
+  background-position: 0 bottom;
+  animation: fogAnim 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fogAnim{
+  0%{ background-position: -200% bottom }
+  100%{background-position: 0% bottom;}
 }
