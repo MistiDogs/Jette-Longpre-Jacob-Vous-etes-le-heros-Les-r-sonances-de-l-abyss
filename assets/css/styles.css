@@ -10,17 +10,23 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  background-color: var(--background);
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   margin: 0;
+
+  background: url(/assets/images/fog.png) var(--background);
+  background-size: contain;
+  background-position: 0 0;
+  animation: fogAnim 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 #jeu {
   display: flex;
   z-index: 4;
-  background-color: var(--background_contenu);
+  background-color: rgba(44, 44, 44, 0.8);
   width: 600px;
   text-align: center;
   flex-direction: column;
@@ -70,29 +76,8 @@ button:hover {
   background-color: var(--bouton_hover);
 }
 
-.anim-body {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  background: url(/assets/images/) center center;
-  background-size: cover;
-}
-
-.fog-anim {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: url(/assets/images/fog.png) repeat-x;
-  background-size: 200% auto;
-  background-position: 0 bottom;
-  animation: fogAnim 60s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
 
 @keyframes fogAnim{
-  0%{ background-position: -200% bottom }
-  100%{background-position: 0% bottom;}
+  0%{ background-position: 100vw bottom }
+  100%{background-position: 0 bottom;}
 }
