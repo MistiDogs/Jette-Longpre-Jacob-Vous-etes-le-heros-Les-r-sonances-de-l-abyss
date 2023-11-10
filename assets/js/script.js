@@ -1,5 +1,4 @@
 let chapitre = {
-    // début
     arrive: {
         titre: "Emménagement en ville",
         description: "Vous êtes un détective qui a entendu des rumeurs d'une ville fantôme où surviennent des événements étranges, vous êtes venu enquêter. Il y a deux endroits qui vous tapent à l'oeil.",
@@ -38,7 +37,6 @@ let chapitre = {
         ]
     },
 
-//done
     police: {
         titre: "Centre de police",
         description: "Dans le centre de police, vous trouvez un pistolet sur un bureau, accompagné d'affiches de disparitions incomplètes.",
@@ -213,6 +211,7 @@ function goToChapter(chapitreKey) {
             imageChapitre.style.display = 'block';
             videoChapitre.style.display = 'none';
         } else if (ChapitreActuel.media.type === 'video') {
+            mediaClone.style.backgroundImage = "url('" + ChapitreActuel.media.path + "')";
             videoChapitre.src = ChapitreActuel.media.path;
             videoChapitre.style.display = 'block';
             imageChapitre.style.display = 'none';
@@ -225,34 +224,5 @@ function goToChapter(chapitreKey) {
 
 // Appel initial pour démarrer le jeu
 goToChapter('arrive');
-
-
-/* JEU DANS LA CONSOLE, MAYBE IT'S BROKEN BTW
-goToChapter('bizarre');
-if (chapters[chapterKey]) {
-    const chapter = chapters[chapterKey];
-    console.log(chapter.titre);
-    console.log(chapter.description);
-    console.log("buttonss:");
-    for (const buttons of chapter.buttons) {
-        console.log(buttons.titre);
-    }
-} else {
-    console.log("chapitre non trouvé : " + chapterKey);
-}
-*/
-
-
-
-
-/* 
-
-Notes... skip !
-
-
-
-if ''bizarre && gun true... 
-*/
-
 
 //animation fade to black 
