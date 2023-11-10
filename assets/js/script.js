@@ -7,7 +7,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/arrive.jpg"
         },
-        audio: "./assets/audio/enginerev.mp3",
+        audio: "./assets/audio/horror-violin_9xxpnRR.mp3",
         buttons: [{
                 titre: 'Poste de police',
                 'destination': 'police'
@@ -26,7 +26,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/principale.jpg"
         },
-        audio: "./assets/audio/26-game-over-1.mp3",
+        audio: "./assets/audio/Ghost Whispering Sound Effect.mp3",
         buttons: [{
                 titre: 'Continuer',
                 'destination': 'bizarre'
@@ -38,7 +38,7 @@ let chapitre = {
         ]
     },
 
-
+//done
     police: {
         titre: "Centre de police",
         description: "Dans le centre de police, vous trouvez un pistolet sur un bureau, accompagné d'affiches de disparitions incomplètes.",
@@ -46,7 +46,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/police.jpg"
         },
-        audio: "../assets/audio/26-game-over-1.mp3",
+        audio: "./assets/audio/police-beep.mp3",
         buttons: [{
                 titre: 'Presévérer',
                 'destination': 'trouve'
@@ -65,7 +65,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/trouve.jpg"
         },
-        audio: "./assets/audio/26-game-over-1.mp3",
+        audio: "./assets/audio/pulse3d-106110.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -79,7 +79,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/vide.jpg"
         },
-        audio: "./assets/audio/26-game-over-1.mp3",
+        audio: "./assets/audio/spongebob-sad-song.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -93,7 +93,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/bizarre.jpg"
         },
-        audio: "./assets/audio/26-game-over-1.mp3",
+        audio: "./assets/audio/Roar Sound Effect.mp3",
         buttons: [{
                 titre: 'Attendre',
                 'destination': 'attendre'
@@ -110,13 +110,13 @@ let chapitre = {
     },
 
     attendre: {
-        titre: "Surpise !",
+        titre: "Surprise !",
         description: "La créature bondit avec une férocité déconcertante, vous laissant suffisamment de temps pour rejoindre votre voiture et la démarrer, mais elle vous poursuit toujours de près...",
         media: {
             type: 'video',
             path: "./assets/images/attendreEtLancer.mp4"
         },
-        audio: "./assets/audio/26-game-over-1.mp3",
+        audio: "./assets/audio/bo-womp.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -130,7 +130,7 @@ let chapitre = {
             type: 'video',
             path: "./assets/images/pow.mp4"
         },
-        audio: "./assets/audio/26-game-over-1.mp3",
+        audio: "./assets/audio/fortnite-gun-shot-sound.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -142,9 +142,9 @@ let chapitre = {
         description: "La créature se précipite à la poursuite du pistolet, vous offrant une opportunité de fuir la ville.",
         media: {
             type: 'video',
-            path: "./assets/images/pasencoretrouvé"
+            path: "./assets/images/escape.mp4"
         },
-        audio: "./assets/audio/26-game-over-1.mp3",
+        audio: "/assets/audio/bfdi-throw-sound.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -187,6 +187,10 @@ function generateButtons(buttons) {
 }
 
 function goToChapter(chapitreKey) {
+    
+    videoChapitre.pause();
+    videoChapitre.currentTime = 0;
+
     if (chapitre[chapitreKey]) {
         const ChapitreActuel = chapitre[chapitreKey];
         titreChapitre.textContent = ChapitreActuel.titre;
@@ -199,7 +203,12 @@ function goToChapter(chapitreKey) {
             iHaveGun = true;
         }
 
+        if (chapitreKey === 'arrive') {
+            iHaveGun = false;
+        }
+
         if (ChapitreActuel.media.type === 'img') {
+            mediaClone.style.backgroundImage = "url('"+ChapitreActuel.media.path+"')";
             imageChapitre.src = ChapitreActuel.media.path;
             imageChapitre.style.display = 'block';
             videoChapitre.style.display = 'none';
@@ -210,7 +219,6 @@ function goToChapter(chapitreKey) {
             videoChapitre.autoplay = true;
             videoChapitre.controls = true;
         }
-
         generateButtons(ChapitreActuel.buttons);
     }
 }
@@ -245,3 +253,6 @@ Notes... skip !
 
 if ''bizarre && gun true... 
 */
+
+
+//animation fade to black 

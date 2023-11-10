@@ -3,7 +3,7 @@
   --background_contenu: #2c2c2c;
   --police: #d9d9d9;
   --bouton: #6d3e39;
-  --bouton_hover: #95514b;
+  --bouton_hover: black;
   --police-bouton: #ffffff;
 }
 
@@ -14,13 +14,18 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
+}
 
-  background: url(/assets/images/fog.png) var(--background);
-  background-size: contain;
-  background-position: 0 0;
-  animation: fogAnim 20s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+#mediaClone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -2;
+  filter: blur(10px);
+  background-position: center center;
 }
 
 #jeu {
@@ -35,6 +40,11 @@ body {
   min-height: 100px;
   height: 100%;
   padding: 3%;
+  border-radius: 25px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #2c2a2a;
+
 }
 
 h1 {
@@ -51,12 +61,14 @@ p {
   margin-bottom: 30px;
 }
 
-img, video {
+img,video {
   display: flex;
   width: 50%;
   max-width: 100%;
   margin-bottom: 20px;
 }
+
+/*Boutton style*/
 
 #button-container {
   display: flex;
@@ -67,17 +79,97 @@ img, video {
   margin-bottom: 10px;
 }
 
-button {
-  background-color: var(--bouton);
-  color: var(--police-bouton);
+button{
+  padding: 10px 25px;
+  background-color: #191919;
+  color: var(--police);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
-button:hover {
-  background-color: var(--bouton_hover);
+button:hover{
+    background: var(--background_contenu);
+    color: #ffffff;
+    box-shadow: 0 0 5px #050801,
+                0 0 25px #050801,
+                0 0 50px #050801,
+                0 0 200px #050801;
+     -webkit-box-reflect:below px linear-gradient(transparent, #0005);
 }
 
+button:hover, 
+.button:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
 
-@keyframes fogAnim{
-  0%{ background-position: 100vw bottom }
-  100%{background-position: 0 bottom;}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--bouton_hover); }
+}
+
+/* fin boutton style*/
+
+
+/* Animation FOG */
+.fog {
+  opacity: 0.4;
+  z-index: -1;
+  position: fixed;
+  width: 20%;
+}
+
+.fog1 {
+  left: -100000px;
+  width: 50%;
+  animation: fog-animation-1 40s linear infinite;
+  animation-delay: 2s;
+}
+
+.fog2 {
+  left: -100000px;
+  width: 80%;
+  animation: fog-animation-2 30s linear infinite;
+  animation-delay: 1s;
+}
+
+.fog3 {
+  left: -100px;
+  width: 100%;
+  animation: fog-animation-3 50s linear infinite;
+  animation-delay: 0;
+}
+@keyframes fog-animation-1 {
+  0%   { top: -50%; left: -80%; opacity: 0.1; }
+  100% { top:  50%; left: 100%; }
+}
+
+@keyframes fog-animation-2 {
+  0%   { top:  50%; left: -50%; opacity: 0.1; }
+  100% { top: -50%; left: 100%; }
+}
+
+@keyframes fog-animation-3 {
+  0%   { top: 0; left: -60%; opacity: 0.2; }
+  100% { top:  50%; left: 120%; }
+}
+
+/* Fin */
+
+.img {
+  max-width: 250px;
+  padding: 1rem;
+  color: white;
+  border-width: 3px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      gray, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
 }
