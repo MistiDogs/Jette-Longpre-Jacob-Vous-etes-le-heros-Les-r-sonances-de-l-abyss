@@ -29,15 +29,7 @@ body {
 }
 
 #videoClone {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  z-index: -2;
-  filter: blur(10px);
-  background-position: center center;
+
 }
 
 #jeu {
