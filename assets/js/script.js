@@ -7,7 +7,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/arrive.jpg"
         },
-        audio: "./assets/audio/26-game-over-1.mp3",
+        audio: "./assets/audio/enginerev.mp3",
         buttons: [{
                 titre: 'Poste de police',
                 'destination': 'police'
@@ -26,7 +26,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/principale.jpg"
         },
-        audio: "./assets/audio/arrive.mp3",
+        audio: "./assets/audio/26-game-over-1.mp3",
         buttons: [{
                 titre: 'Continuer',
                 'destination': 'bizarre'
@@ -46,7 +46,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/police.jpg"
         },
-        audio: "./assets/audio/arrive.mp3",
+        audio: "../assets/audio/26-game-over-1.mp3",
         buttons: [{
                 titre: 'Presévérer',
                 'destination': 'trouve'
@@ -65,7 +65,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/trouve.jpg"
         },
-        audio: "./assets/audio/arrive.mp3",
+        audio: "./assets/audio/26-game-over-1.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -79,7 +79,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/vide.jpg"
         },
-        audio: "./assets/audio/arrive.mp3",
+        audio: "./assets/audio/26-game-over-1.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -93,7 +93,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/bizarre.jpg"
         },
-        audio: "./assets/audio/arrive.mp3",
+        audio: "./assets/audio/26-game-over-1.mp3",
         buttons: [{
                 titre: 'Attendre',
                 'destination': 'attendre'
@@ -116,7 +116,7 @@ let chapitre = {
             type: 'video',
             path: "./assets/images/attendreEtLancer.mp4"
         },
-        audio: "./assets/audio/arrive.mp3",
+        audio: "./assets/audio/26-game-over-1.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -130,7 +130,7 @@ let chapitre = {
             type: 'video',
             path: "./assets/images/pow.mp4"
         },
-        audio: "./assets/audio/arrive.mp3",
+        audio: "./assets/audio/26-game-over-1.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -144,7 +144,7 @@ let chapitre = {
             type: 'video',
             path: "./assets/images/pasencoretrouvé"
         },
-        audio: "./assets/audio/arrive.mp3",
+        audio: "./assets/audio/26-game-over-1.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -156,6 +156,7 @@ let titreChapitre = document.querySelector('.titre');
 let descriptionChapitre = document.querySelector('.description');
 let imageChapitre = document.querySelector('.img');
 let videoChapitre = document.querySelector('video');
+let audioChapitre = document.querySelector('audio')
 
 let iHaveGun = false;
 
@@ -190,6 +191,9 @@ function goToChapter(chapitreKey) {
         const ChapitreActuel = chapitre[chapitreKey];
         titreChapitre.textContent = ChapitreActuel.titre;
         descriptionChapitre.textContent = ChapitreActuel.description;
+
+        audioChapitre.src = ChapitreActuel.audio;
+        audioChapitre.play();
 
         if (chapitreKey === 'police') {
             iHaveGun = true;
