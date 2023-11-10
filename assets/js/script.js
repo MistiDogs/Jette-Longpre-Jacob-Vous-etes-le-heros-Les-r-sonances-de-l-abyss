@@ -189,6 +189,7 @@ function goToChapter(chapitreKey) {
     videoChapitre.pause();
     videoChapitre.currentTime = 0;
 
+
     if (chapitre[chapitreKey]) {
         const ChapitreActuel = chapitre[chapitreKey];
         titreChapitre.textContent = ChapitreActuel.titre;
@@ -211,12 +212,13 @@ function goToChapter(chapitreKey) {
             imageChapitre.style.display = 'block';
             videoChapitre.style.display = 'none';
         } else if (ChapitreActuel.media.type === 'video') {
-            mediaClone.style.backgroundImage = "url('" + ChapitreActuel.media.path + "')";
+            mediaClone.style.backgroundImage = "";
             videoChapitre.src = ChapitreActuel.media.path;
             videoChapitre.style.display = 'block';
             imageChapitre.style.display = 'none';
             videoChapitre.autoplay = true;
             videoChapitre.controls = true;
+            mediaClone.innerHTML = `<video src="${ChapitreActuel.media.path}" autoplay muted loop></video>`;
         }
         generateButtons(ChapitreActuel.buttons);
     }
