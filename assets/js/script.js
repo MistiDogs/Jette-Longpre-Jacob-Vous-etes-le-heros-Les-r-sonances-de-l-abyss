@@ -7,6 +7,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/arrive.jpg"
         },
+        audio: "./assets/audio/26-game-over-1.mp3",
         buttons: [{
                 titre: 'Poste de police',
                 'destination': 'police'
@@ -25,6 +26,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/principale.jpg"
         },
+        audio: "./assets/audio/arrive.mp3",
         buttons: [{
                 titre: 'Continuer',
                 'destination': 'bizarre'
@@ -44,6 +46,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/police.jpg"
         },
+        audio: "./assets/audio/arrive.mp3",
         buttons: [{
                 titre: 'Presévérer',
                 'destination': 'trouve'
@@ -62,6 +65,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/trouve.jpg"
         },
+        audio: "./assets/audio/arrive.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -75,6 +79,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/vide.jpg"
         },
+        audio: "./assets/audio/arrive.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -88,6 +93,7 @@ let chapitre = {
             type: 'img',
             path: "./assets/images/bizarre.jpg"
         },
+        audio: "./assets/audio/arrive.mp3",
         buttons: [{
                 titre: 'Attendre',
                 'destination': 'attendre'
@@ -110,6 +116,7 @@ let chapitre = {
             type: 'video',
             path: "./assets/images/attendreEtLancer.mp4"
         },
+        audio: "./assets/audio/arrive.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -123,6 +130,7 @@ let chapitre = {
             type: 'video',
             path: "./assets/images/pow.mp4"
         },
+        audio: "./assets/audio/arrive.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
@@ -136,6 +144,7 @@ let chapitre = {
             type: 'video',
             path: "./assets/images/pasencoretrouvé"
         },
+        audio: "./assets/audio/arrive.mp3",
         buttons: [{
             titre: 'Recommencer',
             'destination': 'arrive'
