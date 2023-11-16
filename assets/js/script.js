@@ -185,10 +185,11 @@ function generateButtons(buttons) {
 }
 
 function goToChapter(chapitreKey) {
-    
+    let chapitrenow = chapitreKey;
+    localStorage.setItem("chapitre", `${chapitrenow}`);
+
     videoChapitre.pause();
     videoChapitre.currentTime = 0;
-
 
     if (chapitre[chapitreKey]) {
         const ChapitreActuel = chapitre[chapitreKey];
@@ -198,13 +199,20 @@ function goToChapter(chapitreKey) {
         audioChapitre.src = ChapitreActuel.audio;
         audioChapitre.play();
 
+        if (chapitreKey === `arrive` ) {
+            mediaClone.innerHTML = `<video src="${''}" autoplay muted loop></video>`;
+
+        };
+
         if (chapitreKey === 'police') {
             iHaveGun = true;
-        }
+            localStorage.setItem(`iHaveGun`, `true`)
+        };
 
         if (chapitreKey === 'arrive') {
             iHaveGun = false;
-        }
+            localStorage.setItem(`iHaveGun`, `false`)
+        };
 
         if (ChapitreActuel.media.type === 'img') {
             mediaClone.style.backgroundImage = "url('"+ChapitreActuel.media.path+"')";
@@ -225,6 +233,25 @@ function goToChapter(chapitreKey) {
 }
 
 // Appel initial pour démarrer le jeu
-goToChapter('arrive');
+
+let lieu = localStorage.getItem('chapitre');
+let twist = localStorage.getItem(`iHaveGun`);
+
+if (lieu != undefined) {
+    goToChapter(lieu);
+
+    if (twist === 'true') {
+        iHaveGun = true;
+    } else {
+        iHaveGun = false;
+    }
+} else {
+    goToChapter('arrive');
+}
+
+document.getElementById('reset').addEventListener('click', function(){
+    localStorage.clear
+    goToChapter('arrive')
+})
 
 //animation fade to black 

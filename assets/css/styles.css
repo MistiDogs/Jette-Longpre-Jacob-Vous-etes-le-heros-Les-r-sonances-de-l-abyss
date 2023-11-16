@@ -28,7 +28,7 @@ body {
   background-position: center center;
 }
 
-#videoClone {
+.videoClone {
 
 }
 
@@ -176,4 +176,15 @@ button:hover,
       gray, 
       rgba(0, 0, 0, 0)
     ) 1 100%;
+}
+
+#reset {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  filter: blur(1px);
+}
+
+#reset:hover {
+  filter: blur(0px);
 }
