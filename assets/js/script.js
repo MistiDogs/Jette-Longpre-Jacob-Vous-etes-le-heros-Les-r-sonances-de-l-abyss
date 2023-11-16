@@ -225,7 +225,7 @@ function goToChapter(chapitreKey) {
             videoChapitre.style.display = 'block';
             imageChapitre.style.display = 'none';
             videoChapitre.autoplay = true;
-            videoChapitre.controls = true;
+            videoChapitre.controls = false;
             mediaClone.innerHTML = `<video src="${ChapitreActuel.media.path}" autoplay muted loop></video>`;
         }
         generateButtons(ChapitreActuel.buttons);
