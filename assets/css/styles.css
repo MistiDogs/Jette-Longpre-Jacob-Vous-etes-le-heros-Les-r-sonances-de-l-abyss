@@ -16,19 +16,21 @@ body {
   margin: 0;
 }
 
+
 #mediaClone {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
   z-index: -2;
   filter: blur(10px);
   background-position: center center;
 }
 
-.videoClone {
+#mediaClone video { position: absolute;
+  width: 100%;
 
 }
 
@@ -48,32 +50,26 @@ body {
   border-style: solid;
   border-width: 5px;
   border-color: #2c2a2a;
+}
 
+/* Headings and text styles */
+h1, h2, p {
+  color: var(--police);
 }
 
 h1 {
-  color: var(--police);
   font-size: 3rem;
 }
 
-h2 {
-  color: var(--police);
-}
-
-p {
-  color: var(--police);
-  margin-bottom: 30px;
-}
-
-img,video {
+/* Images and videos */
+img, video {
   display: flex;
   width: 50%;
   max-width: 100%;
   margin-bottom: 20px;
 }
 
-/*Boutton style*/
-
+/* Button styles */
 #button-container {
   display: flex;
   flex-direction: row;
@@ -83,9 +79,9 @@ img,video {
   margin-bottom: 10px;
 }
 
-button{
+button {
   padding: 10px 25px;
-  background-color: #191919;
+  background-color: var(--background);
   color: var(--police);
   font-weight: bold;
   border: none;
@@ -96,30 +92,30 @@ button{
   cursor: pointer;
 }
 
-button:hover{
-    background: var(--background_contenu);
-    color: #ffffff;
-    box-shadow: 0 0 5px #050801,
-                0 0 25px #050801,
-                0 0 50px #050801,
-                0 0 200px #050801;
-     -webkit-box-reflect:below px linear-gradient(transparent, #0005);
+button:hover {
+  background: var(--background_contenu);
+  color: #ffffff;
+  box-shadow: 0 0 5px #050801,
+              0 0 25px #050801,
+              0 0 50px #050801,
+              0 0 200px #050801;
+  -webkit-box-reflect: below px linear-gradient(transparent, #0005);
 }
 
-button:hover, 
+button:hover,
 .button:focus {
   animation: pulse 1s;
   box-shadow: 0 0 0 2em transparent;
 }
 
+/* Keyframes for pulse animation */
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 var(--bouton_hover); }
+  0% {
+    box-shadow: 0 0 0 0 var(--bouton_hover);
+  }
 }
 
-/* fin boutton style*/
-
-
-/* Animation FOG */
+/* Fog animation */
 .fog {
   opacity: 0.4;
   z-index: -1;
@@ -147,53 +143,53 @@ button:hover,
   animation: fog-animation-3 50s linear infinite;
   animation-delay: 0;
 }
+
 @keyframes fog-animation-1 {
-  0%   { top: -50%; left: -80%; opacity: 0.1; }
-  100% { top:  50%; left: 100%; }
+  0% { top: -50%; left: -80%; opacity: 0.1; }
+  100% { top: 50%; left: 100%; }
 }
 
 @keyframes fog-animation-2 {
-  0%   { top:  50%; left: -50%; opacity: 0.1; }
+  0% { top: 50%; left: -50%; opacity: 0.1; }
   100% { top: -50%; left: 100%; }
 }
 
 @keyframes fog-animation-3 {
-  0%   { top: 0; left: -60%; opacity: 0.2; }
-  100% { top:  50%; left: 120%; }
+  0% { top: 0; left: -60%; opacity: 0.2; }
+  100% { top: 50%; left: 120%; }
 }
 
-/* Fin */
-
-.img{
+/* Image and video styles */
+.img, .video {
   max-width: 250px;
   padding: 1rem;
   color: white;
   border-width: 3px;
   border-style: solid;
-  border-image: 
+  border-image:
     linear-gradient(
-      to bottom, 
-      gray, 
+      to bottom,
+      gray,
       rgba(0, 0, 0, 0)
     ) 1 100%;
 }
 
-.video{
+.video {
   height: 100%;
   width: auto;
   padding: 1rem;
   color: white;
   border-width: 3px;
   border-style: solid;
-  border-image: 
+  border-image:
     linear-gradient(
-      to bottom, 
-      gray, 
+      to bottom,
+      gray,
       rgba(0, 0, 0, 0)
     ) 1 100%;
 }
 
-
+/* Reset button */
 #reset {
   position: absolute;
   left: 40px;
