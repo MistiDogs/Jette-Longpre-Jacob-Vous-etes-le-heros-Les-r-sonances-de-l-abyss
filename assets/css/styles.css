@@ -195,7 +195,8 @@ button:hover,
 /* Reset button */
 #reset {
   position: relative;
-  left: -200px;
+  left: 0px;
+  top: 10px;
   bottom: 5x;
   filter: blur(1px);
 }
