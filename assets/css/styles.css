@@ -17,10 +17,7 @@ body {
   margin: 0;
 }
 
-html {
-  overflow-x: hidden;
 
-}
 
 #mediaClone {
   position: fixed;
@@ -35,9 +32,9 @@ html {
   background-position: center center;
 }
 
-#mediaClone video { position: absolute;
+#mediaClone video { 
+  position: absolute;
   width: 100%;
-
 }
 
 #jeu {
@@ -211,26 +208,19 @@ button:hover,
   position: relative;
 }
 
-/*if screen phone tatata = width: 60vw; if screen ordi width 20 */
-
-
-
-
-
-
-
-
 @media screen and (max-width: 900px) { 
   body {
     background-size: cover;
   }
   #jeu {
+    position: relative;
     min-width: auto;
     display: flex;
     left: 0px;
     width: 100%;
     height: 100%;
     border-radius: 0px;
+    
 
   }
   h1 {
@@ -241,10 +231,10 @@ button:hover,
   }
   img, video {
     display: flex;
-    width: 125%;
-    height: 125%;
+    width: 100%;
+    height: 100%;
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   #mediaClone {
     height: 100%
@@ -253,7 +243,7 @@ button:hover,
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
   }
