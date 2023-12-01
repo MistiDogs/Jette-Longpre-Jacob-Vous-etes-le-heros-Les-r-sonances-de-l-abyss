@@ -156,6 +156,7 @@ let imageChapitre = document.querySelector('.img');
 let videoChapitre = document.querySelector('video');
 let audioChapitre = document.querySelector('audio')
 
+
 let iHaveGun = false;
 
 function generateButtons(buttons) {
@@ -250,7 +251,7 @@ if (lieu != undefined) {
 }
 
 document.getElementById('reset').addEventListener('click', function(){
-    localStorage.clear
+    localStorage.clear()
     goToChapter('arrive')
 })
 
