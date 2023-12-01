@@ -256,3 +256,20 @@ document.getElementById('reset').addEventListener('click', function(){
 })
 
 //animation fade to black 
+
+//Bouton MUTE
+
+let muteCheckBox = document.getElementById("mute")
+
+let isMuted = localStorage.getItem("isMuted") === "true";
+videoChapitre.muted = isMuted;
+audioChapitre.muted = isMuted;
+muteCheckBox.checked = isMuted
+
+muteCheckBox.addEventListener('change', function(){
+
+localStorage.setItem("isMuted", muteCheckBox.checked);
+
+videoChapitre.muted = muteCheckBox.checked;
+audioChapitre.muted = muteCheckBox.checked;
+})
