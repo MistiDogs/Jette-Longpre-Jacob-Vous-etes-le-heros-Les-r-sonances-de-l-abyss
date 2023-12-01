@@ -272,4 +272,4 @@ localStorage.setItem("isMuted", muteCheckBox.checked);
 
 videoChapitre.muted = muteCheckBox.checked;
 audioChapitre.muted = muteCheckBox.checked;
-})
+});
