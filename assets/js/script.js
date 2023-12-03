@@ -93,7 +93,7 @@ let chapitre = {
         },
         audio: "./assets/audio/Roar Sound Effect.mp3",
         buttons: [{
-                titre: 'Attendre',
+                titre: 'Courir',
                 'destination': 'attendre'
             },
             {
@@ -227,7 +227,7 @@ function goToChapter(chapitreKey) {
             imageChapitre.style.display = 'none';
             videoChapitre.autoplay = true;
             videoChapitre.controls = false;
-            mediaClone.innerHTML = `<video src="${ChapitreActuel.media.path}" autoplay muted loop></video>`;
+            mediaClone.innerHTML = `<video class='Ref117' src="${ChapitreActuel.media.path}" autoplay muted loop></video>`;
         }
         generateButtons(ChapitreActuel.buttons);
     }
